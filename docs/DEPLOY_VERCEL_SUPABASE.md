@@ -12,6 +12,10 @@ Browser hanya berbicara dengan domain frontend. Rewrite `/api/v1/*` meneruskan k
 ## 0. Prasyarat
 - Repo sudah di GitHub: `tegokkk/E-COMMERCE` (branch `main`).
 - Akun Vercel dan Supabase.
+
+**Jalan pintas env:** setelah project Supabase dibuat, jalankan `npm run vercel:env` di root repo. Script meminta connection string pooler Supabase (salin apa adanya dari Connect), nama project frontend/backend, dan email admin. Hasilnya dua file siap tempel (`vercel-env.backend.local`, `vercel-env.frontend.local`, diabaikan git) berisi seluruh variabel di bagian 2 dan 3, termasuk secret acak dan URL migrasi port 5432. Buat project Vercel dengan nama persis seperti yang Anda masukkan agar domain cocok. Menjalankan ulang script mempertahankan secret dan password admin yang sudah ada.
+
+Jika memilih manual, ikuti bagian di bawah:
 - Tentukan dulu **dua domain produksi** (agar env saling merujuk benar), mis.:
   - Frontend: `https://konterkuota.vercel.app`
   - Backend: `https://konterkuota-api.vercel.app`

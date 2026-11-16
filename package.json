@@ -22,7 +22,8 @@
     "admin:create": "npm run admin:create --workspace=@konter/backend",
     "admin:reset-password": "npm run admin:reset-password --workspace=@konter/backend",
     "analytics:report": "npm run analytics:report --workspace=@konter/backend",
-    "analytics:cleanup": "npm run analytics:cleanup --workspace=@konter/backend"
+    "analytics:cleanup": "npm run analytics:cleanup --workspace=@konter/backend",
+    "vercel:env": "node scripts/make-vercel-env.mjs"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^16.4.5",
