@@ -80,7 +80,7 @@ async function main() {
   const adminPassword = readExisting('INITIAL_ADMIN_PASSWORD') || crypto.randomBytes(18).toString('base64url');
 
   const backend = [
-    'NODE_ENV=production',
+    '# (NODE_ENV tidak perlu dimasukkan karena sudah otomatis diset production oleh Vercel)',
     'TRUST_PROXY=true',
     'UPLOAD_STORAGE=blob',
     `DATABASE_URL=${runtime}`,

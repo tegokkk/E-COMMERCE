@@ -45,9 +45,11 @@ if (env.NODE_ENV === 'production') {
     || unsafePlaceholder.test(decodeURIComponent(databaseUrl.password))) {
     throw new Error('Konfigurasi produksi memerlukan domain HTTPS, trust proxy, dan secret nyata.');
   }
-  if (process.env.VERCEL === '1' && (env.UPLOAD_STORAGE !== 'blob'
-    || (!env.BLOB_STORE_ID && !env.BLOB_READ_WRITE_TOKEN))) {
-    throw new Error('Hubungkan private Vercel Blob ke backend sebelum deploy. Penyimpanan foto lokal tidak persisten di Vercel.');
+  if (process.env.VERCEL === '1' && env.UPLOAD_STORAGE !== 'blob') {
+    throw new Error('Konfigurasi produksi Vercel memerlukan UPLOAD_STORAGE=blob.');
+  }
+  if (process.env.VERCEL === '1' && !env.BLOB_STORE_ID && !env.BLOB_READ_WRITE_TOKEN) {
+    console.warn('[Vercel Blob] PERINGATAN: Vercel Blob belum dihubungkan. Hubungkan Blob store di tab Storage Vercel agar upload foto berfungsi.');
   }
   if (process.env.VERCEL === '1' && ['localhost', '127.0.0.1', '::1', 'db'].includes(databaseUrl.hostname)) {
     throw new Error('DATABASE_URL di Vercel harus menggunakan PostgreSQL online.');

@@ -20,8 +20,9 @@ async function main() {
   } finally { await database.destroy(); }
 }
 
-main().catch(() => {
-  // Do not emit driver errors/connection strings or credential-bearing config.
-  console.error('Setup database gagal. Periksa DATABASE_URL, izin migrasi, dan INITIAL_ADMIN_EMAIL/INITIAL_ADMIN_PASSWORD bila database masih kosong.');
+main().catch((err) => {
+  const safeMessage = (err?.message || 'Unknown error').replace(/:\/\/[^@]+@/, '://***@');
+  console.error(`Setup database gagal: ${safeMessage}`);
+  console.error('Periksa DATABASE_URL, izin migrasi, dan INITIAL_ADMIN_EMAIL/INITIAL_ADMIN_PASSWORD bila database masih kosong.');
   process.exitCode = 1;
 });
