@@ -5,7 +5,7 @@ import { env } from '../src/config/env.js';
 import { ensureInitialAdmin } from '../src/lib/initial-admin.js';
 
 async function main() {
-  if (process.env.VERCEL !== '1' || env.NODE_ENV !== 'production') {
+  if (process.env.VERCEL !== '1') {
     throw new Error('vercel:build hanya boleh dijalankan oleh build Vercel dengan konfigurasi PostgreSQL online.');
   }
   const database = knex({ ...config, pool: { min: 0, max: 2 } });
