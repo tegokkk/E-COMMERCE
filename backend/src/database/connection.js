@@ -8,8 +8,9 @@ export const db = knex({
   client: 'pg',
   connection: connectionUrl,
   pool: {
-    min: 2,
-    max: 10,
+    min: process.env.VERCEL === '1' ? 0 : 2,
+    max: process.env.VERCEL === '1' ? 2 : 10,
+    idleTimeoutMillis: process.env.VERCEL === '1' ? 5000 : 30000,
     acquireTimeoutMillis: 10000,
   },
 });

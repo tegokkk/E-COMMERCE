@@ -1,6 +1,10 @@
 import rateLimit from 'express-rate-limit';
+import { PgRateLimitStore } from '../lib/pg-rate-limit-store.js';
+
+const sharedStore = (prefix) => process.env.VERCEL === '1' ? new PgRateLimitStore(prefix) : undefined;
 
 export const loginLimiter = rateLimit({
+  store: sharedStore('login'),
   windowMs: 15 * 60 * 1000, // 15 menit
   max: 10, // Maksimal 10 percobaan gagal per IP
   skipSuccessfulRequests: true,
@@ -15,6 +19,7 @@ export const loginLimiter = rateLimit({
 });
 
 export const contactLimiter = rateLimit({
+  store: sharedStore('contact'),
   windowMs: 1 * 60 * 1000, // 1 menit
   max: 60, // 60 request per menit
   message: {
@@ -28,6 +33,7 @@ export const contactLimiter = rateLimit({
 });
 
 export const eventsLimiter = rateLimit({
+  store: sharedStore('events'),
   windowMs: 1 * 60 * 1000, // 1 menit
   max: 120, // 120 events per menit
   message: {

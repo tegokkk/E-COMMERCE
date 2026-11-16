@@ -109,8 +109,8 @@ export function CounterForm({ initialData = null, isEdit = false }) {
     event.target.value = '';
     if (!file) return;
     setUploadError('');
-    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024 || file.size === 0) {
-      setUploadError('Pilih foto JPG, PNG, atau WebP maksimal 5 MB.');
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 4 * 1024 * 1024 || file.size === 0) {
+      setUploadError('Pilih foto JPG, PNG, atau WebP maksimal 4 MB.');
       return;
     }
     setUploading(true);
@@ -230,7 +230,7 @@ export function CounterForm({ initialData = null, isEdit = false }) {
       <div className="flex flex-col gap-3 rounded-card border border-line p-4">
         <div>
           <label htmlFor="counter-photo" className="block text-sm font-semibold text-content">Foto Konter</label>
-          <p className="text-xs text-content-muted mt-1">JPG, PNG, atau WebP maksimal 5 MB. Foto akan dirapikan otomatis.</p>
+          <p className="text-xs text-content-muted mt-1">JPG, PNG, atau WebP maksimal 4 MB. Foto akan dirapikan otomatis.</p>
         </div>
         {formData.photoUrl && isAllowedPhotoUrl(formData.photoUrl) && (
           <div className="relative h-40 w-full max-w-64 overflow-hidden rounded-card bg-surface-muted">

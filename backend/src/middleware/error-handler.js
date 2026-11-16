@@ -2,6 +2,7 @@ import { AppError } from '../lib/app-error.js';
 import { logger } from '../config/logger.js';
 
 export function errorHandler(err, req, res, _next) {
+  if (res.headersSent) return _next(err);
   const statusCode = err.statusCode || (err instanceof AppError ? err.statusCode : 500);
   const code = err.code || (statusCode === 500 ? 'INTERNAL_SERVER_ERROR' : 'BAD_REQUEST');
   const message =

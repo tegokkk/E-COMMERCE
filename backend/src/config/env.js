@@ -21,6 +21,10 @@ const envSchema = z.object({
   UPLOAD_DIR: z.string().default(path.resolve(__dirname, '../../uploads')),
   ANALYTICS_ENABLED: z.string().default('true').transform((val) => val === 'true'),
   LOG_LEVEL: z.enum(['trace', 'debug', 'info', 'warn', 'error', 'fatal']).default('info'),
+  UPLOAD_STORAGE: z.enum(['local', 'blob']).default(process.env.VERCEL === '1' ? 'blob' : 'local'),
+  BLOB_STORE_ID: z.string().optional(),
+  BLOB_READ_WRITE_TOKEN: z.string().optional(),
+  CRON_SECRET: z.string().min(32).optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
@@ -40,6 +44,16 @@ if (env.NODE_ENV === 'production') {
     || !env.TRUST_PROXY || unsafePlaceholder.test(env.SESSION_SECRET)
     || unsafePlaceholder.test(decodeURIComponent(databaseUrl.password))) {
     throw new Error('Konfigurasi produksi memerlukan domain HTTPS, trust proxy, dan secret nyata.');
+  }
+  if (process.env.VERCEL === '1' && (env.UPLOAD_STORAGE !== 'blob'
+    || (!env.BLOB_STORE_ID && !env.BLOB_READ_WRITE_TOKEN))) {
+    throw new Error('Hubungkan private Vercel Blob ke backend sebelum deploy. Penyimpanan foto lokal tidak persisten di Vercel.');
+  }
+  if (process.env.VERCEL === '1' && ['localhost', '127.0.0.1', '::1', 'db'].includes(databaseUrl.hostname)) {
+    throw new Error('DATABASE_URL di Vercel harus menggunakan PostgreSQL online.');
+  }
+  if (process.env.VERCEL === '1' && !env.CRON_SECRET) {
+    throw new Error('Isi CRON_SECRET untuk pemeliharaan analitik dan foto terjadwal di Vercel.');
   }
 }
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend API for KonterKuota",
   "type": "module",
-  "main": "src/server.js",
+  "main": "src/app.js",
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
@@ -15,11 +15,14 @@
     "analytics:report": "node scripts/report-pilot.js",
     "analytics:cleanup": "node scripts/cleanup-analytics.js",
     "uploads:cleanup": "node scripts/cleanup-uploads.js",
-    "test": "vitest run"
+    "test": "vitest run",
+    "vercel:build": "node scripts/vercel-build.js"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.10.1",
     "@konter/shared": "*",
+    "@vercel/blob": "^2.9.0",
+    "@vercel/functions": "^3.11.3",
     "argon2": "^0.41.1",
     "connect-pg-simple": "^10.0.0",
     "cors": "^2.8.5",
@@ -38,5 +41,8 @@
   "devDependencies": {
     "supertest": "^7.0.0",
     "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

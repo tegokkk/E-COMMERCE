@@ -10,6 +10,7 @@ import overviewRoutes from './modules/overview/overview.routes.js';
 import analyticsRoutes from './modules/analytics/analytics.routes.js';
 import { adminUploadRoutes, publicUploadRoutes } from './modules/uploads/upload.routes.js';
 import { db } from './database/connection.js';
+import maintenanceRoutes from './modules/maintenance/maintenance.routes.js';
 
 const router = Router();
 
@@ -43,6 +44,7 @@ router.use('/admin/regions', regionRoutes);
 router.use('/admin/settings', settingsRoutes);
 router.use('/admin/overview', overviewRoutes);
 router.use('/', analyticsRoutes);
+router.use('/', maintenanceRoutes);
 
 export default router;
 
