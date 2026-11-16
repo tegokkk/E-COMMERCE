@@ -1,0 +1,122 @@
+x-backend-environment: &backend-environment
+  NODE_ENV: production
+  PORT: "4000"
+  DATABASE_URL: postgresql://${DB_USER:?Set DB_USER}:${DB_PASSWORD:?Set DB_PASSWORD}@db:5432/konterkuota_production
+  SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET}
+  PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Set PUBLIC_ORIGIN}
+  TRUST_PROXY: "true"
+  DISPLAY_TIME_ZONE: Asia/Jakarta
+  IMAGE_ALLOWED_HOSTS: lh3.googleusercontent.com,images.unsplash.com
+  UPLOAD_DIR: /app/uploads
+  ANALYTICS_ENABLED: "true"
+  LOG_LEVEL: info
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:?Set DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      POSTGRES_DB: konterkuota_production
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  migrate:
+    image: konterkuota-backend:${RELEASE_TAG:?Set RELEASE_TAG}
+    command: ["npm", "run", "db:migrate"]
+    restart: "no"
+    environment: *backend-environment
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - internal_network
+
+  backend:
+    image: konterkuota-backend:${RELEASE_TAG:?Set RELEASE_TAG}
+    build:
+      context: ..
+      dockerfile: infra/backend.Dockerfile
+    restart: always
+    environment: *backend-environment
+    volumes:
+      - uploaded_images:/app/uploads
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4000/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  frontend:
+    image: konterkuota-frontend:${RELEASE_TAG:?Set RELEASE_TAG}
+    build:
+      context: ..
+      dockerfile: infra/frontend.Dockerfile
+      args:
+        SITE_URL: ${PUBLIC_ORIGIN:?Set PUBLIC_ORIGIN}
+        API_INTERNAL_URL: http://backend:4000/api/v1
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      API_INTERNAL_URL: http://backend:4000/api/v1
+      SITE_URL: ${PUBLIC_ORIGIN:?Set PUBLIC_ORIGIN}
+      IMAGE_ALLOWED_HOSTS: lh3.googleusercontent.com,images.unsplash.com
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ${TLS_CERT_DIR:?Set TLS_CERT_DIR}/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - ${TLS_CERT_DIR:?Set TLS_CERT_DIR}/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/internal-health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  internal_network:
+    driver: bridge
+
+volumes:
+  postgres_prod_data:
+    driver: local
+  uploaded_images:
+    driver: local

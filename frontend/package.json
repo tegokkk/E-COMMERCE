@@ -1,0 +1,35 @@
+{
+  "name": "@konter/frontend",
+  "version": "1.0.0",
+  "description": "Frontend for KonterKuota Directory Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@konter/shared": "*",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@tanstack/react-query": "^5.66.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.66.0",
+    "motion": "^14.14.0",
+    "next": "^16.4.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.6",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "jsdom": "^26.0.0",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.6",
+    "vitest": "^5.1.0"
+  }
+}

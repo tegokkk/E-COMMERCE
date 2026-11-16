@@ -1,0 +1,42 @@
+{
+  "name": "@konter/backend",
+  "version": "1.0.0",
+  "description": "Backend API for KonterKuota",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "knex migrate:latest",
+    "db:migrate:rollback": "knex migrate:rollback",
+    "db:seed": "knex seed:run",
+    "admin:create": "node scripts/create-admin.js",
+    "admin:reset-password": "node scripts/reset-admin-password.js",
+    "analytics:report": "node scripts/report-pilot.js",
+    "analytics:cleanup": "node scripts/cleanup-analytics.js",
+    "uploads:cleanup": "node scripts/cleanup-uploads.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.10.1",
+    "@konter/shared": "*",
+    "argon2": "^0.41.1",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.5",
+    "csrf-sync": "^4.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "knex": "^3.1.0",
+    "pg": "^8.13.3",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0",
+    "vitest": "^5.1.0"
+  }
+}

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KonterKuota — Wadah Pemasaran Konter UMKM Kuota Internet</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#e9c339",
+            "on-tertiary-fixed-variant": "#584400",
+            "surface-container-highest": "#dfe2ed",
+            "secondary-fixed-dim": "#79db8d",
+            "secondary": "#006d30",
+            "inverse-surface": "#2c3039",
+            "on-secondary-fixed": "#00210a",
+            "on-tertiary": "#ffffff",
+            "surface-container-high": "#e5e8f3",
+            "primary-fixed-dim": "#e9c339",
+            "outline": "#7e7662",
+            "on-secondary": "#ffffff",
+            "surface-tint": "#725c00",
+            "secondary-fixed": "#95f8a7",
+            "tertiary-fixed-dim": "#efc12a",
+            "surface-bright": "#f9f9ff",
+            "tertiary": "#745b00",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#231b00",
+            "tertiary-fixed": "#ffe08c",
+            "surface-variant": "#dfe2ed",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eef0fc",
+            "surface-container": "#ebedf9",
+            "primary-container": "#ffd84d",
+            "on-background": "#181c23",
+            "on-surface-variant": "#4d4634",
+            "primary": "#725c00",
+            "on-primary-fixed-variant": "#564500",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#005323",
+            "on-secondary-container": "#007233",
+            "outline-variant": "#d0c6ae",
+            "surface-container-low": "#f1f3fe",
+            "on-primary-container": "#735e00",
+            "on-tertiary-container": "#765d00",
+            "background": "#f9f9ff",
+            "tertiary-container": "#ffd763",
+            "surface-dim": "#d7dae5",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-surface": "#181c23",
+            "on-tertiary-fixed": "#241a00",
+            "on-primary": "#ffffff",
+            "secondary-container": "#92f5a4",
+            "surface": "#f9f9ff",
+            "primary-fixed": "#ffe07e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.25rem",
+            "gutter-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #d0c6ae;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#F4F5F7] text-on-surface antialiased font-body-md text-body-md min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT: SideNavBar (Rail Desktop)                                -->
+<!-- ========================================================================= -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-[88px] rounded-r-3xl z-40 flex-col justify-between py-6 items-center bg-primary-container shadow-md">
+<!-- Top Monogram & Brand Alt -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-2xl bg-on-primary-container/10 flex items-center justify-center font-headline-md text-headline-md font-bold text-on-primary-container shadow-sm border border-on-primary-container/15">
+        KK
+      </div>
+<span class="sr-only">Monogram Logo KonterKuota Kuning</span>
+<span class="font-label-sm text-label-sm text-on-primary-container tracking-wider font-extrabold mt-1">KONTER</span>
+</div>
+<!-- Navigation Tab Links (Intent Match: Beranda is Active) -->
+<nav aria-label="Navigasi Utama" class="flex flex-col items-center gap-4 w-full px-2">
+<!-- Item 1: Beranda (Active State mapped from style_active_navigation) -->
+<a class="bg-on-primary-container/15 text-on-primary-container rounded-2xl p-3 flex flex-col items-center justify-center w-[68px] scale-95 transition-transform duration-150 group" href="#hero">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-md text-label-md mt-1 font-bold">Beranda</span>
+</a>
+<!-- Item 2: Konter (Inactive State mapped from style_inactive_navigation) -->
+<a class="text-on-primary-container/70 p-3 flex flex-col items-center justify-center rounded-2xl w-[68px] hover:text-on-primary-container hover:bg-primary/10 transition-colors" href="#direktori">
+<span class="material-symbols-outlined text-[24px]" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md mt-1 font-medium">Konter</span>
+</a>
+<!-- Item 3: Cara Beli -->
+<a class="text-on-primary-container/70 p-3 flex flex-col items-center justify-center rounded-2xl w-[68px] hover:text-on-primary-container hover:bg-primary/10 transition-colors" href="#cara-beli">
+<span class="material-symbols-outlined text-[24px]" data-icon="help_center">help_center</span>
+<span class="font-label-md text-label-md mt-1 font-medium text-center">Cara Beli</span>
+</a>
+<!-- Item 4: Mitra -->
+<a class="text-on-primary-container/70 p-3 flex flex-col items-center justify-center rounded-2xl w-[68px] hover:text-on-primary-container hover:bg-primary/10 transition-colors" href="#gabung-mitra">
+<span class="material-symbols-outlined text-[24px]" data-icon="handshake">handshake</span>
+<span class="font-label-md text-label-md mt-1 font-medium">Mitra</span>
+</a>
+</nav>
+<!-- Footer Action / Setting -->
+<div class="flex flex-col items-center gap-3">
+<button aria-label="Pengaturan" class="text-on-primary-container/70 p-3 flex flex-col items-center justify-center rounded-2xl hover:text-on-primary-container hover:bg-primary/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md mt-0.5 font-medium">Pengaturan</span>
+</button>
+</div>
+</aside>
+<!-- Mobile Floating Bottom Bar for Responsive Continuity -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-primary-container rounded-t-3xl shadow-lg z-40 flex items-center justify-around px-4">
+<a class="flex flex-col items-center text-on-primary-container py-1 px-3 bg-on-primary-container/15 rounded-xl font-bold" href="#hero">
+<span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Beranda</span>
+</a>
+<a class="flex flex-col items-center text-on-primary-container/80 py-1 px-3" href="#direktori">
+<span class="material-symbols-outlined text-[20px]" data-icon="storefront">storefront</span>
+<span class="font-label-sm text-label-sm">Konter</span>
+</a>
+<a class="flex flex-col items-center text-on-primary-container/80 py-1 px-3" href="#cara-beli">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_center">help_center</span>
+<span class="font-label-sm text-label-sm">Cara Beli</span>
+</a>
+<a class="flex flex-col items-center text-on-primary-container/80 py-1 px-3" href="#gabung-mitra">
+<span class="material-symbols-outlined text-[20px]" data-icon="handshake">handshake</span>
+<span class="font-label-sm text-label-sm">Mitra</span>
+</a>
+</nav>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT: TopNavBar (Docked Sticky Header)                        -->
+<!-- ========================================================================= -->
+<header class="docked full-width top-0 sticky z-30 bg-surface shadow-sm transition-all duration-200">
+<div class="flex justify-between items-center w-full px-6 py-3 md:ml-[88px] md:max-w-[calc(100%-88px)]">
+<!-- Left Anchor & Tagline -->
+<div class="flex items-center gap-4">
+<a class="flex items-baseline gap-2" href="#hero">
+<span class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">KonterKuota</span>
+<span class="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">Dukung konter lokal</span>
+</a>
+</div>
+<!-- Center Links (Web) -->
+<div class="hidden lg:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary font-bold pb-1 font-label-lg text-label-lg" href="#hero">Beranda</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium pb-1 font-label-lg text-label-lg transition-colors" href="#direktori">Jelajah Konter</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium pb-1 font-label-lg text-label-lg transition-colors" href="#cara-beli">Panduan Pembeli</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium pb-1 font-label-lg text-label-lg transition-colors" href="#faq">Tentang Kami</a>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- Quick Search Icon Input Field -->
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-44 md:w-56 pl-9 pr-3 py-1.5 rounded-full text-body-sm font-body-sm bg-surface-container-lowest border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" id="top-search" placeholder="Cari cepat konter..." type="text"/>
+</div>
+<a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary-container text-on-surface font-label-lg text-label-lg font-bold hover:bg-[#F4C62F] transition-colors shadow-sm active:scale-95" href="#gabung-mitra">
+          Gabung Mitra
+        </a>
+<a class="inline-flex items-center justify-center px-3 py-2 rounded-full border border-outline-variant text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-colors" href="#faq">
+          Bantuan
+        </a>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CONTENT CANVAS                                             -->
+<!-- ========================================================================= -->
+<main class="flex-1 md:ml-[88px] max-w-[1440px] px-4 md:px-8 py-6 flex flex-col gap-8 pb-24 md:pb-12">
+<!-- 1. COMPACT HERO SECTION (Tinggi proporsional agar baris direktori langsung terlihat) -->
+<section class="relative rounded-3xl bg-surface-container-lowest border border-[#E2E5EA] p-6 md:p-8 shadow-[0_4px_20px_-2px_rgba(32,36,44,0.04)] overflow-hidden" id="hero">
+<div class="relative z-10 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/30 border border-primary-container text-primary font-label-md text-label-md font-bold mb-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Wadah pemasaran konter UMKM
+        </div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight mb-2">
+          Cari kuota internet, dukung konter lokal.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-6">
+          Temukan konter di wilayah pilihanmu, lihat paket dari berbagai provider, lalu hubungi penjual langsung lewat WhatsApp tanpa perantara.
+        </p>
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-container text-on-surface font-label-lg text-label-lg font-bold hover:bg-[#F4C62F] transition-all shadow-sm active:scale-95" href="#direktori">
+<span class="material-symbols-outlined text-[20px]" data-icon="travel_explore">travel_explore</span>
+            Cari Konter
+          </a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-container transition-all" href="#gabung-mitra">
+<span class="material-symbols-outlined text-[20px]" data-icon="store">store</span>
+            Daftarkan Konter
+          </a>
+</div>
+</div>
+<!-- Subtle Accent Background Geometry -->
+<div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-primary-container/20 blur-3xl pointer-events-none"></div>
+</section>
+<!-- 2. DIRECTORY WORKSPACE & ASYMMETRIC RIGHT COMPANION DRAWER -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT: MAIN DIRECTORY CARD PANEL (9 Cols) -->
+<section class="lg:col-span-8 xl:col-span-9 bg-surface-container-lowest rounded-3xl border border-[#E2E5EA] p-6 shadow-[0_12px_32px_-4px_rgba(32,36,44,0.06)] flex flex-col gap-6" id="direktori">
+<!-- Header & Search Toolbar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-surface-container-high pb-5">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[28px]" data-icon="storefront">storefront</span>
+              Temukan Konter
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Daftar gerai pulsa &amp; paket data aktif terverifikasi</p>
+</div>
+<!-- Quick Filters: Dropdown Wilayah & Search Input -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+<!-- Dropdown Wilayah -->
+<div class="relative min-w-[160px]">
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-xl pl-3.5 pr-8 py-2 text-label-md font-label-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container cursor-pointer" id="wilayah-select">
+<option value="all">Semua wilayah</option>
+<option value="Utara">Wilayah Utara</option>
+<option value="Barat">Wilayah Barat</option>
+<option value="Timur">Wilayah Timur</option>
+<option value="Selatan">Wilayah Selatan</option>
+<option value="Tengah">Wilayah Tengah</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Search Field -->
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-8 py-2 rounded-xl bg-surface-container-low border border-outline-variant font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-container-lowest" id="search-input" placeholder="Cari nama konter, paket..." type="text"/>
+<button class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" id="clear-search">
+<span class="material-symbols-outlined text-[16px]" data-icon="close">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Provider Chips Single-Choice Filter & Status Counter -->
+<div class="flex flex-wrap items-center justify-between gap-3">
+<!-- Chips -->
+<div class="flex flex-wrap items-center gap-2" id="provider-chips">
+<button class="provider-pill active-pill px-4 py-1.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold transition-all shadow-sm" data-provider="all" type="button">
+              Semua provider
+            </button>
+<button class="provider-pill px-4 py-1.5 rounded-full bg-surface-container-lowest border border-[#E2E5EA] text-[#596273] font-label-md text-label-md font-medium hover:bg-surface-container transition-all" data-provider="Telkomsel" type="button">
+              Telkomsel
+            </button>
+<button class="provider-pill px-4 py-1.5 rounded-full bg-surface-container-lowest border border-[#E2E5EA] text-[#596273] font-label-md text-label-md font-medium hover:bg-surface-container transition-all" data-provider="IM3" type="button">
+              IM3
+            </button>
+<button class="provider-pill px-4 py-1.5 rounded-full bg-surface-container-lowest border border-[#E2E5EA] text-[#596273] font-label-md text-label-md font-medium hover:bg-surface-container transition-all" data-provider="XL" type="button">
+              XL
+            </button>
+<button class="provider-pill px-4 py-1.5 rounded-full bg-surface-container-lowest border border-[#E2E5EA] text-[#596273] font-label-md text-label-md font-medium hover:bg-surface-container transition-all" data-provider="AXIS" type="button">
+              AXIS
+            </button>
+<button class="provider-pill px-4 py-1.5 rounded-full bg-surface-container-lowest border border-[#E2E5EA] text-[#596273] font-label-md text-label-md font-medium hover:bg-surface-container transition-all" data-provider="Tri" type="button">
+              Tri
+            </button>
+</div>
+<!-- Result Indicator and Reset -->
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant font-bold bg-surface-container px-3 py-1 rounded-full" id="results-count">
+              6 konter ditemukan
+            </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1 font-semibold" id="reset-filter-btn" type="button">
+<span class="material-symbols-outlined text-[14px]" data-icon="refresh">refresh</span>
+              Reset filter
+            </button>
+</div>
+</div>
+<!-- 3-Column Bento Grid Kartu Konter UMKM -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5" id="cards-grid">
+<!-- KARTU 1: Berkah Cell -->
+<article class="konter-card bg-surface-container-lowest border border-[#E2E5EA] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group" data-name="Berkah Cell" data-price="25000" data-providers="Telkomsel, IM3" data-wilayah="Utara">
+<div>
+<div class="relative h-32 w-full rounded-xl overflow-hidden bg-surface-container mb-3 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clean front-view photograph of a tidy Indonesian neighborhood mobile phone counter named Berkah Cell with glass display vitrines showcasing SIM card starter packs and yellow pulsa vouchers. Natural morning daylight fills the scene with warm, approachable colors in a modern light-mode palette of pristine whites, subtle greys, and joyful canary yellow highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCefUCnQjdYoUkmsaHE10Ke1ASBiU_495p3mVG7hTLu1n7x_vGBF_793GYOr7Csg6I_rHK25G4OsoCTfUxFh4aZIE0KdiG8yUaWoRxlXCrUGTlANdduVY-Npt9zOifEHRUfT26rbOMJLyAkJhPl9joNIWvaCF-iscX5J2HyXRKyje_52T0xcTFbzq7HERD7jrSBL2HPZ0iJqjS5kdagkiO9SW_4dWXq-7E2bMfedL0"/>
+<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Buka
+                </span>
+</div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Berkah Cell</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified" title="Terverifikasi UMKM">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                Wilayah Utara • Jl. Melati No. 12
+              </p>
+<!-- Provider Badges -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Telkomsel</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">IM3</span>
+</div>
+</div>
+<!-- Price & Dual Split Action -->
+<div class="pt-3 border-t border-surface-container">
+<div class="flex items-baseline justify-between mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp25.000</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold text-center transition-colors" onclick="openPaketModal('Berkah Cell', 'Wilayah Utara', 'Jl. Melati No. 12', 'Senin–Sabtu, 08.00–21.00', '6 November 2026, 09.00')" type="button">
+                  Lihat Paket
+                </button>
+<a class="w-full py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors" href="https://wa.me/6281234567890?text=Halo%20Berkah%20Cell,%20saya%20tertarik%20dengan%20paket%20kuota%20di%20KonterKuota" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+                  Hubungi
+                </a>
+</div>
+</div>
+</article>
+<!-- KARTU 2: Duta Pulsa -->
+<article class="konter-card bg-surface-container-lowest border border-[#E2E5EA] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group" data-name="Duta Pulsa" data-price="18000" data-providers="XL, AXIS" data-wilayah="Barat">
+<div>
+<div class="relative h-32 w-full rounded-xl overflow-hidden bg-surface-container mb-3 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An inviting storefront of a local digital retail outlet named Duta Pulsa in Indonesia with neat wooden counters and glass display cabinets featuring telecom accessories and provider vouchers. The ambient daytime lighting is soft and neutral, conveying friendly neighborhood professionalism in high-key white and vibrant yellow accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_eVnSUqRxLLKiAhskOd3Z2L0dj8JZWYypDxok8NuCmKvc_GL6uXtKz21BuJVEj2G0jhRyPd5NfGOESOMouvpBgiOuru8-Zd2nhA5ze8nSYCHcfW6GyyA2pcRPXc4G8kallrrcH0C1gXvgMlT3Avo_LogRrO78ynE335hRhoyxtTNno2_9htbvvMSc_WxiDcW3h0ZN_tgZQ6TtN82qqlb2bsVdoXOqcch9xklTd4I"/>
+<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Buka
+                </span>
+</div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Duta Pulsa</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified" title="Terverifikasi UMKM">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                Wilayah Barat • Jl. Anggrek No. 45
+              </p>
+<!-- Provider Badges -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">XL</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">AXIS</span>
+</div>
+</div>
+<!-- Price & Dual Split Action -->
+<div class="pt-3 border-t border-surface-container">
+<div class="flex items-baseline justify-between mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp18.000</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold text-center transition-colors" onclick="openPaketModal('Duta Pulsa', 'Wilayah Barat', 'Jl. Anggrek No. 45', 'Senin–Minggu, 09.00–22.00', '6 November 2026, 08.45')" type="button">
+                  Lihat Paket
+                </button>
+<a class="w-full py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors" href="https://wa.me/6281234567891?text=Halo%20Duta%20Pulsa,%20saya%20tertarik%20dengan%20paket%20kuota%20di%20KonterKuota" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+                  Hubungi
+                </a>
+</div>
+</div>
+</article>
+<!-- KARTU 3: Kawan Kuota -->
+<article class="konter-card bg-surface-container-lowest border border-[#E2E5EA] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group" data-name="Kawan Kuota" data-price="20000" data-providers="Tri, IM3" data-wilayah="Timur">
+<div>
+<div class="relative h-32 w-full rounded-xl overflow-hidden bg-surface-container mb-3 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A brightly lit community telecommunication kiosk in East Jakarta named Kawan Kuota with neat promotional stands and packaged prepaid data vouchers. The atmosphere is warm, professional, and accessible with crisp white architectural elements, soft shadows, and cheerful canary yellow signage accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6feF9ykiXxudQmTyw2bwFz8dumOaoBQvwdV8I8tkjBo9XJJIDbDYDdGp3Z7gHKtOBXsoztyIwDj90Iqa6LIh6H-VLJJhzZca05LOlCJs7XJX9sn06gSzo_6WgTj8A5cmBZasN8QmLGi0VF_3Koc3-uCUxz94ZQk1Wi4FYw0jCobYuIt1JK8ulJ78lhD2j4oczoDcMG6S-eFCNkAwe7HR0bRzSB7xrYEhr6jdCd_k"/>
+<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Buka
+                </span>
+</div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Kawan Kuota</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified" title="Terverifikasi UMKM">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                Wilayah Timur • Jl. Merpati No. 8
+              </p>
+<!-- Provider Badges -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Tri</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">IM3</span>
+</div>
+</div>
+<!-- Price & Dual Split Action -->
+<div class="pt-3 border-t border-surface-container">
+<div class="flex items-baseline justify-between mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp20.000</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold text-center transition-colors" onclick="openPaketModal('Kawan Kuota', 'Wilayah Timur', 'Jl. Merpati No. 8', 'Setiap Hari, 08.00–22.00', '6 November 2026, 09.15')" type="button">
+                  Lihat Paket
+                </button>
+<a class="w-full py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors" href="https://wa.me/6281234567892?text=Halo%20Kawan%20Kuota,%20saya%20tertarik%20dengan%20paket%20kuota%20di%20KonterKuota" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+                  Hubungi
+                </a>
+</div>
+</div>
+</article>
+<!-- KARTU 4: Mitra Cell -->
+<article class="konter-card bg-surface-container-lowest border border-[#E2E5EA] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group" data-name="Mitra Cell" data-price="30000" data-providers="XL, Telkomsel" data-wilayah="Selatan">
+<div>
+<div class="relative h-32 w-full rounded-xl overflow-hidden bg-surface-container mb-3 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clean modern suburban Indonesian cellular store named Mitra Cell with organized glass vitrines, modern point-of-sale display, and telecom banners. High-key light-mode presentation features soft ambient lighting, clean white shelves, and touches of cheerful warm yellow branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWfqq_df6_X0AFCRx5ZCgj3TFqO3tLzsuN3Mpf2eV-y_8ZofaTdXmY0vgwq3FMZsSOFz6iYjmle9-RCPSz2gR9I3A5-lOPkH0APHEs8ZOHZ9b1C2zpOW-bwW4vrtzKmJcmX71dT2IVMmv4u2sTFkgT8DI4vhbKA5z1pBG8JOkT8RsRDVdyQ7pa6SCBfkiDloqiTjUNlO-mCAtGegg97HCFV2BZhIJ3LFpprXhaNrs"/>
+<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Buka
+                </span>
+</div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Mitra Cell</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified" title="Terverifikasi UMKM">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                Wilayah Selatan • Jl. Kenanga No. 19
+              </p>
+<!-- Provider Badges -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">XL</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Telkomsel</span>
+</div>
+</div>
+<!-- Price & Dual Split Action -->
+<div class="pt-3 border-t border-surface-container">
+<div class="flex items-baseline justify-between mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp30.000</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold text-center transition-colors" onclick="openPaketModal('Mitra Cell', 'Wilayah Selatan', 'Jl. Kenanga No. 19', 'Senin–Sabtu, 08.30–21.30', '6 November 2026, 09.10')" type="button">
+                  Lihat Paket
+                </button>
+<a class="w-full py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors" href="https://wa.me/6281234567893?text=Halo%20Mitra%20Cell,%20saya%20tertarik%20dengan%20paket%20kuota%20di%20KonterKuota" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+                  Hubungi
+                </a>
+</div>
+</div>
+</article>
+<!-- KARTU 5: Sinar Pulsa -->
+<article class="konter-card bg-surface-container-lowest border border-[#E2E5EA] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group" data-name="Sinar Pulsa" data-price="15000" data-providers="AXIS, Tri" data-wilayah="Utara">
+<div>
+<div class="relative h-32 w-full rounded-xl overflow-hidden bg-surface-container mb-3 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A compact and friendly roadside internet voucher shop named Sinar Pulsa in North Jakarta with a bright counter and colorful SIM packages behind clean glass. Diffused gentle natural sunlight illuminates the light-toned contemporary design featuring sunny yellow branding and subtle grey counters." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnPLFWHo02lQyR1kKxc3pXcPstVECQEAHfjDvp1MURFGLeYl8LmT68rLsW50kYexLhFSvxfZwzANq9eFJownUUAaWs3-utXkj53_L33Hr0dKQe-zdmELV_38Mht8VgwoQ220Ce0_DnBULCQNp_zmhPe69oiKk-QPQbDaRdfH2HhfKS1PVBhA0wpoY4qQOXTErOYT8yhZ5boWxYtb1_EN88HHS82bXPfbpEE9Tec8U"/>
+<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Buka
+                </span>
+</div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Sinar Pulsa</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified" title="Terverifikasi UMKM">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                Wilayah Utara • Jl. Flamboyan No. 3
+              </p>
+<!-- Provider Badges -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">AXIS</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Tri</span>
+</div>
+</div>
+<!-- Price & Dual Split Action -->
+<div class="pt-3 border-t border-surface-container">
+<div class="flex items-baseline justify-between mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp15.000</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold text-center transition-colors" onclick="openPaketModal('Sinar Pulsa', 'Wilayah Utara', 'Jl. Flamboyan No. 3', 'Senin–Minggu, 08.00–21.00', '6 November 2026, 08.30')" type="button">
+                  Lihat Paket
+                </button>
+<a class="w-full py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors" href="https://wa.me/6281234567894?text=Halo%20Sinar%20Pulsa,%20saya%20tertarik%20dengan%20paket%20kuota%20di%20KonterKuota" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+                  Hubungi
+                </a>
+</div>
+</div>
+</article>
+<!-- KARTU 6: Zona Cell -->
+<article class="konter-card bg-surface-container-lowest border border-[#E2E5EA] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group" data-name="Zona Cell" data-price="22000" data-providers="IM3, XL" data-wilayah="Tengah">
+<div>
+<div class="relative h-32 w-full rounded-xl overflow-hidden bg-surface-container mb-3 border border-outline-variant/30">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A charming urban Indonesian mobile data kiosk named Zona Cell with organized display tiers of local carrier SIM cards and pulsa vouchers. Clean minimalist interior with soft ambient light, gentle shadows, and clean modern aesthetic highlighting bright yellow accents and clear white surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGRvLHaP9lXOSA4cL8z8graI8GILwPlbQpai12VwhnTAXymVBVBsqRXMuW4RciYfH_im7zWCF0ON-OmMKgomAxMuz2_O8k9kNQ8TfllzJMyFByFt8hXo-vxE9AEvkrvXjzfTVeMobnEUUZGYVrpJPfXOLsRX7Vryr5irvCjp5mLg9quKkdRil-Rt6p3eOGZ-9naRUTaE-x1F6ErI8AAiWnO2EKj1lCA4VRvwTOYAk"/>
+<span class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Buka
+                </span>
+</div>
+<div class="flex items-start justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Zona Cell</h3>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="verified" title="Terverifikasi UMKM">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="location_on">location_on</span>
+                Wilayah Tengah • Jl. Mawar No. 77
+              </p>
+<!-- Provider Badges -->
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">IM3</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">XL</span>
+</div>
+</div>
+<!-- Price & Dual Split Action -->
+<div class="pt-3 border-t border-surface-container">
+<div class="flex items-baseline justify-between mb-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp22.000</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold text-center transition-colors" onclick="openPaketModal('Zona Cell', 'Wilayah Tengah', 'Jl. Mawar No. 77', 'Senin–Sabtu, 08.00–21.30', '6 November 2026, 09.00')" type="button">
+                  Lihat Paket
+                </button>
+<a class="w-full py-2 rounded-xl bg-[#15803D] hover:bg-[#166534] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1 transition-colors" href="https://wa.me/6281234567895?text=Halo%20Zona%20Cell,%20saya%20tertarik%20dengan%20paket%20kuota%20di%20KonterKuota" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+                  Hubungi
+                </a>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden py-12 text-center flex-col items-center justify-center" id="no-results">
+<span class="material-symbols-outlined text-[48px] text-outline mb-2" data-icon="search_off">search_off</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Konter tidak ditemukan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mt-1">Coba gunakan kata kunci pencarian yang lebih umum atau pilih "Semua provider".</p>
+</div>
+</section>
+<!-- RIGHT: COMPANION DRAWER ASYMMETRIC SECTION (3-4 Cols) -->
+<aside class="lg:col-span-4 xl:col-span-3 flex flex-col gap-5 sticky top-20">
+<!-- Friendly Storefront Illustration & Guidance Card -->
+<div class="bg-surface-container-lowest border border-[#E2E5EA] rounded-3xl p-5 shadow-[0_4px_20px_-2px_rgba(32,36,44,0.04)] flex flex-col gap-4">
+<div class="h-44 w-full rounded-2xl overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A warm and detailed 3D digital illustration of a welcoming Indonesian neighborhood corner kiosk with a sunny yellow awning, SIM card showcases, and an approachable storekeeper waving. Soft daylight casts gentle diffused shadows in a bright, modern light-mode setting with clean whites and warm golden canary accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBdi1-0sinnXSUYKdKU4oLfOr6qzuVice1peClN3UXm4u9DSc9w2JyzWDn0VtagAudVwy_idSaVbw94FqNnDfR1Pdutz7PEw3L4d5vt2YFE_NbYaCtN6BRbp8j-NvTFV3UXaLRN2F79mYxevEHBlvkVrhqsKCF0YaXnLf91JdswMmBqVPgSd5lO6TIqI4w6UbHLtRarsZJfhcA3092v7fVOrkfcQBk5t25yFUsMY"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">
+              Temukan konter pilihanmu
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Pilih tombol <strong class="text-on-surface font-semibold">Lihat Paket</strong> untuk mengecek kuota, masa aktif, dan harga dari penjual secara rinci.
+            </p>
+</div>
+<!-- Quick WhatsApp Buying Guide Box -->
+<div class="bg-[#F1F8F3] border border-[#C6E7D1] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-[#15803D] font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="shield">shield</span>
+              Panduan WhatsApp Aman
+            </div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant space-y-1.5">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5" data-icon="check_circle">check_circle</span>
+                Pastikan nomor tujuan dan nama paket telah sesuai sebelum transaksi.
+              </li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5" data-icon="check_circle">check_circle</span>
+                Tanyakan ketersediaan stok fisik atau injeksi kuota secara langsung.
+              </li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5" data-icon="check_circle">check_circle</span>
+                Transaksi dilakukan langsung antara Anda dan pemilik konter UMKM.
+              </li>
+</ul>
+</div>
+<!-- Direct Directory Tip -->
+<div class="pt-2 border-t border-surface-container flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Tanpa biaya perantara</span>
+<span class="font-label-sm text-label-sm font-bold text-secondary">100% Langsung</span>
+</div>
+</div>
+<!-- Quick Help Badge -->
+<div class="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/40 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[22px]" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Butuh panduan lengkap?</p>
+<a class="font-body-sm text-body-sm text-primary hover:underline font-semibold" href="#cara-beli">Pelajari 3 langkah mudah beli</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- ========================================================================= -->
+<!-- 3. BAGIAN CARA BELI (3 Langkah Kartu Rapi)                                -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest border border-[#E2E5EA] rounded-3xl p-6 md:p-8 shadow-sm" id="cara-beli">
+<div class="max-w-2xl mb-8">
+<span class="text-primary font-label-md text-label-md font-bold tracking-wide uppercase">Panduan Praktis</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">
+          Cara Beli Kuota di Konter Terdekat
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Tiga tahapan sederhana tanpa ribet registrasi akun atau isi saldo aplikasi.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Langkah 1 -->
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3 relative">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+            1
+          </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Pilih konter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Gunakan filter provider atau wilayah untuk mencari gerai konter UMKM yang paling dekat dan sesuai dengan kebutuhan Anda.
+          </p>
+</div>
+<!-- Langkah 2 -->
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3 relative">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+            2
+          </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Lihat paket</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Cek rincian kuota utama, kuota lokal, masa aktif kartu, serta estimasi harga terakhir yang diperbarui oleh pemilik konter.
+          </p>
+</div>
+<!-- Langkah 3 -->
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3 relative">
+<div class="w-10 h-10 rounded-xl bg-[#15803D] text-white font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+            3
+          </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Hubungi lewat WhatsApp</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Klik tombol Hubungi untuk langsung membuka chat WhatsApp dengan penjual. Tanyakan stok dan selesaikan transaksi secara mandiri.
+          </p>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. BAGIAN GABUNG MITRA (Card Kuning Muda UMKM)                              -->
+<!-- ========================================================================= -->
+<section class="bg-[#FFF7D6] border border-[#E9C339] rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm" id="gabung-mitra">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-on-surface shrink-0 shadow-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-[32px]" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#20242C]">
+            Punya konter? Kenalkan usahamu di sini.
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mt-1">
+            Bantu pembeli di sekitar tokomu menemukan gerai fisik dan daftar paket yang kamu jual. Pendaftaran gratis dan langsung terhubung ke WhatsApp pribadimu.
+          </p>
+</div>
+</div>
+<div class="shrink-0 w-full md:w-auto">
+<a class="inline-flex w-full md:w-auto items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-lg text-label-lg font-bold transition-all shadow-sm active:scale-95 border border-[#E5BE32]" href="https://wa.me/6281234567899?text=Halo%20Admin%20KonterKuota,%20saya%20ingin%20mendaftarkan%20konter%20saya" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]" data-icon="how_to_reg">how_to_reg</span>
+          Daftarkan Konter
+        </a>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. FAQ ACCORDION (4 Topik Penting)                                         -->
+<!-- ========================================================================= -->
+<section class="bg-surface-container-lowest border border-[#E2E5EA] rounded-3xl p-6 md:p-8 shadow-sm" id="faq">
+<div class="max-w-2xl mb-6">
+<span class="text-primary font-label-md text-label-md font-bold tracking-wide uppercase">Pertanyaan Umum</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">
+          Informasi &amp; Ketentuan Direktori
+        </h2>
+</div>
+<div class="space-y-3" id="faq-accordion">
+<!-- Item 1 -->
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/40 p-4 transition-all">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-bold cursor-pointer list-none">
+<span>Bagaimana cara membeli paket kuota di KonterKuota?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform duration-200 text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 pt-3 border-t border-outline-variant/20 leading-relaxed">
+            KonterKuota adalah direktori publik yang menjembatani pembeli dengan penjual konter lokal. Anda cukup memilih konter, melihat paket yang diinginkan, lalu mengeklik tombol WhatsApp untuk berinteraksi langsung dengan penjual tanpa sistem keranjang atau biaya aplikasi tambahan.
+          </p>
+</details>
+<!-- Item 2 -->
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/40 p-4 transition-all">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-bold cursor-pointer list-none">
+<span>Apakah harga paket di situs ini selalu sama dengan di konter?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform duration-200 text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 pt-3 border-t border-outline-variant/20 leading-relaxed">
+            Harga yang dicantumkan merupakan data referensi terakhir yang diperbarui oleh pemilik konter. Kami menyarankan untuk selalu melakukan konfirmasi ketersediaan dan harga akhir sebelum melakukan pembayaran kepada pemilik toko.
+          </p>
+</details>
+<!-- Item 3 -->
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/40 p-4 transition-all">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-bold cursor-pointer list-none">
+<span>Bagaimana mengetahui ketersediaan stok paket atau voucher fisik?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform duration-200 text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 pt-3 border-t border-outline-variant/20 leading-relaxed">
+            Pada panel detail paket terdapat label status seperti "Tersedia" atau "Perlu konfirmasi". Karena perputaran stok di gerai fisik berjalan cepat, silakan tanyakan langsung melalui tombol pesan WhatsApp yang sudah disiapkan.
+          </p>
+</details>
+<!-- Item 4 -->
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/40 p-4 transition-all">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-on-surface font-bold cursor-pointer list-none">
+<span>Bagaimana cara mendaftarkan konter UMKM saya ke dalam direktori?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform duration-200 text-outline" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 pt-3 border-t border-outline-variant/20 leading-relaxed">
+            Pendaftaran dapat dilakukan dengan menekan tombol "Daftarkan Konter" di bagian atas atau bawah situs. Anda akan diarahkan ke kontak tim pengelola untuk mengisi nama konter, alamat gerai, provider yang disediakan, serta nomor WhatsApp aktif toko Anda.
+          </p>
+</details>
+</div>
+</section>
+</main>
+<!-- ========================================================================= -->
+<!-- MODAL / DRAWER DETAIL KONTER & PILIHAN PAKET                              -->
+<!-- ========================================================================= -->
+<div aria-modal="true" class="fixed inset-0 z-50 hidden" id="paket-modal" role="dialog">
+<!-- Backdrop -->
+<div class="fixed inset-0 bg-[#181C23]/40 backdrop-blur-sm transition-opacity" onclick="closePaketModal()"></div>
+<!-- Modal Box Container -->
+<div class="fixed inset-0 flex items-center justify-center p-4">
+<div class="bg-surface-container-lowest border border-[#E2E5EA] w-full max-w-2xl rounded-3xl shadow-[0_24px_48px_-12px_rgba(32,36,44,0.16)] overflow-hidden flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<div class="px-6 py-5 border-b border-surface-container flex items-start justify-between bg-surface-container-low/50">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface" id="modal-konter-name">Berkah Cell</h3>
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="verified">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="modal-konter-address">
+              Wilayah Utara • Jl. Melati No. 12
+            </p>
+<div class="flex flex-wrap items-center gap-3 mt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="schedule">schedule</span>
+<span id="modal-konter-hours">Senin–Sabtu, 08.00–21.00</span>
+</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="history">history</span>
+<span id="modal-konter-updated">Diperbarui 6 November 2026, 09.00</span>
+</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="closePaketModal()" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body: Daftar Pilihan Paket -->
+<div class="p-6 overflow-y-auto space-y-4 custom-scroll">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Pilihan Paket Kuota</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-md">2 Paket Tersedia</span>
+</div>
+<!-- Paket 1: Telkomsel Harian -->
+<div class="border border-[#E2E5EA] rounded-2xl p-4 bg-surface-container-lowest hover:border-primary-container transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Paket Harian 12 GB</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold bg-primary-container/30 text-primary">Telkomsel</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold bg-[#DCFCE7] text-[#15803D]">Tersedia</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                10 GB kuota utama + 2 GB kuota lokal • Masa aktif <strong>7 hari</strong>
+</p>
+<p class="font-label-sm text-label-sm text-outline">
+                *Catatan: Kuota lokal hanya berlaku di wilayah registrasi kartu.
+              </p>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-2 shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0 border-surface-container">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Rp25.000</span>
+<a class="px-4 py-2 rounded-xl bg-primary-container hover:bg-[#F4C62F] text-on-surface font-label-md text-label-md font-bold transition-colors" href="https://wa.me/6281234567890?text=Halo%20Berkah%20Cell,%20apakah%20Paket%20Harian%2012GB%20Telkomsel%20(Rp25.000)%20tersedia?" rel="noopener noreferrer" target="_blank">
+                Tanya Paket
+              </a>
+</div>
+</div>
+<!-- Paket 2: IM3 Bulanan -->
+<div class="border border-[#E2E5EA] rounded-2xl p-4 bg-surface-container-lowest hover:border-primary-container transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Paket Bulanan 20 GB</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold bg-surface-container text-on-surface">IM3</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold bg-[#FEF3C7] text-[#B45309]">Perlu konfirmasi</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                20 GB kuota utama 24 Jam • Masa aktif <strong>30 hari</strong>
+</p>
+<p class="font-label-sm text-label-sm text-outline">
+                *Stok injeksi server terbatas setiap harinya.
+              </p>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between gap-2 shrink-0 border-t sm:border-t-0 pt-2 sm:pt-0 border-surface-container">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Rp45.000</span>
+<a class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold transition-colors" href="https://wa.me/6281234567890?text=Halo%20Berkah%20Cell,%20apakah%20Paket%20Bulanan%2020GB%20IM3%20(Rp45.000)%20masih%20tersedia?" rel="noopener noreferrer" target="_blank">
+                Tanya Ketersediaan
+              </a>
+</div>
+</div>
+<!-- Disclaimer / Verification Notice -->
+<div class="p-3.5 bg-surface-container-low rounded-xl text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5" data-icon="info">info</span>
+<span>Konfirmasi harga dan ketersediaan terakhir kepada konter sebelum mengirimkan pembayaran.</span>
+</div>
+</div>
+<!-- Modal Footer CTA WhatsApp -->
+<div class="px-6 py-4 border-t border-surface-container bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant text-center sm:text-left">
+            Terhubung langsung dengan penjual melalui WhatsApp.
+          </span>
+<a class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#15803D] hover:bg-[#166534] text-white font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-colors shadow-sm" href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20paket%20di%20KonterKuota" id="modal-wa-button" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+            Chat WhatsApp Penjual
+          </a>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT: Footer                                                  -->
+<!-- ========================================================================= -->
+<footer class="docked full-width bottom md:ml-[88px] md:w-[calc(100%-88px)] bg-surface-container-low border-t border-outline-variant mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-8 gap-6 max-w-7xl mx-auto">
+<!-- Left: Brand & Copyright Details -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">KonterKuota</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-md">
+          © 2025 KonterKuota Indonesia. Menghubungkan pembeli dengan konter pulsa &amp; kuota lokal terdekat.
+        </p>
+</div>
+<!-- Right: Footer Navigation Links -->
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#faq">Syarat &amp; Ketentuan</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#faq">Kebijakan Privasi</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#gabung-mitra">Daftar Konter UMKM</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="https://wa.me/6281234567899" rel="noopener noreferrer" target="_blank">Kontak Dukungan</a>
+</div>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- JAVASCRIPT: MICRO-INTERACTIONS, FILTERING & MODAL ENGINE                  -->
+<!-- ========================================================================= -->
+<script>
+    // State Filter
+    let selectedProvider = 'all';
+    let selectedWilayah = 'all';
+    let searchQuery = '';
+
+    const cards = document.querySelectorAll('.konter-card');
+    const resultsCountEl = document.getElementById('results-count');
+    const noResultsEl = document.getElementById('no-results');
+    const searchInput = document.getElementById('search-input');
+    const topSearchInput = document.getElementById('top-search');
+    const clearSearchBtn = document.getElementById('clear-search');
+    const wilayahSelect = document.getElementById('wilayah-select');
+    const providerPills = document.querySelectorAll('.provider-pill');
+    const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+    // Filter Logic
+    function applyFilters() {
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        const wilayah = card.getAttribute('data-wilayah');
+        const providers = card.getAttribute('data-providers').toLowerCase();
+
+        const matchesSearch = searchQuery === '' || 
+                              name.includes(searchQuery) || 
+                              providers.includes(searchQuery);
+
+        const matchesWilayah = selectedWilayah === 'all' || wilayah === selectedWilayah;
+
+        const matchesProvider = selectedProvider === 'all' || 
+                                providers.includes(selectedProvider.toLowerCase());
+
+        if (matchesSearch && matchesWilayah && matchesProvider) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update Result Counter
+      resultsCountEl.textContent = `${visibleCount} konter ditemukan`;
+
+      if (visibleCount === 0) {
+        noResultsEl.classList.remove('hidden');
+        noResultsEl.classList.add('flex');
+      } else {
+        noResultsEl.classList.add('hidden');
+        noResultsEl.classList.remove('flex');
+      }
+    }
+
+    // Provider Chip Clicks
+    providerPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        providerPills.forEach(p => {
+          p.classList.remove('bg-primary-container', 'text-on-surface', 'font-bold', 'shadow-sm');
+          p.classList.add('bg-surface-container-lowest', 'border', 'border-[#E2E5EA]', 'text-[#596273]', 'font-medium');
+        });
+
+        pill.classList.remove('bg-surface-container-lowest', 'border', 'border-[#E2E5EA]', 'text-[#596273]', 'font-medium');
+        pill.classList.add('bg-primary-container', 'text-on-surface', 'font-bold', 'shadow-sm');
+
+        selectedProvider = pill.getAttribute('data-provider');
+        applyFilters();
+      });
+    });
+
+    // Wilayah Select Change
+    wilayahSelect.addEventListener('change', (e) => {
+      selectedWilayah = e.target.value;
+      applyFilters();
+    });
+
+    // Search Input Typing
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      clearSearchBtn.classList.toggle('hidden', searchQuery === '');
+      applyFilters();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.classList.add('hidden');
+      applyFilters();
+    });
+
+    // Top Search mirror
+    if (topSearchInput) {
+      topSearchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        searchInput.value = e.target.value;
+        clearSearchBtn.classList.toggle('hidden', searchQuery === '');
+        applyFilters();
+      });
+    }
+
+    // Reset All Filters
+    resetFilterBtn.addEventListener('click', () => {
+      selectedProvider = 'all';
+      selectedWilayah = 'all';
+      searchQuery = '';
+      searchInput.value = '';
+      if (topSearchInput) topSearchInput.value = '';
+      wilayahSelect.value = 'all';
+      clearSearchBtn.classList.add('hidden');
+
+      providerPills.forEach(pill => {
+        if (pill.getAttribute('data-provider') === 'all') {
+          pill.classList.add('bg-primary-container', 'text-on-surface', 'font-bold', 'shadow-sm');
+          pill.classList.remove('bg-surface-container-lowest', 'border', 'border-[#E2E5EA]', 'text-[#596273]', 'font-medium');
+        } else {
+          pill.classList.remove('bg-primary-container', 'text-on-surface', 'font-bold', 'shadow-sm');
+          pill.classList.add('bg-surface-container-lowest', 'border', 'border-[#E2E5EA]', 'text-[#596273]', 'font-medium');
+        }
+      });
+
+      applyFilters();
+    });
+
+    // Modal Control
+    function openPaketModal(name, wilayah, address, hours, updated) {
+      document.getElementById('modal-konter-name').textContent = name;
+      document.getElementById('modal-konter-address').textContent = `${wilayah} • ${address}`;
+      document.getElementById('modal-konter-hours').textContent = hours;
+      document.getElementById('modal-konter-updated').textContent = `Diperbarui ${updated}`;
+      
+      const modalWaBtn = document.getElementById('modal-wa-button');
+      modalWaBtn.href = `https://wa.me/6281234567890?text=Halo%20${encodeURIComponent(name)},%20saya%20ingin%20bertanya%20paket%20kuota%20dari%20KonterKuota`;
+
+      const modal = document.getElementById('paket-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePaketModal() {
+      const modal = document.getElementById('paket-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on Escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePaketModal();
+      }
+    });
+  </script>
+</body></html>

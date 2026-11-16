@@ -1,0 +1,24 @@
+{
+  "name": "@konter/shared",
+  "version": "1.0.0",
+  "description": "Shared schemas and constants for KonterKuota",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./constants/publication-status": "./src/constants/publication-status.js",
+    "./constants/availability-status": "./src/constants/availability-status.js",
+    "./constants/analytics-events": "./src/constants/analytics-events.js",
+    "./schemas/auth": "./src/schemas/auth.schema.js",
+    "./schemas/counter": "./src/schemas/counter.schema.js",
+    "./schemas/package": "./src/schemas/package.schema.js",
+    "./schemas/provider": "./src/schemas/provider.schema.js",
+    "./schemas/region": "./src/schemas/region.schema.js",
+    "./schemas/settings": "./src/schemas/settings.schema.js",
+    "./schemas/catalog-query": "./src/schemas/catalog-query.schema.js",
+    "./schemas/analytics": "./src/schemas/analytics.schema.js"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

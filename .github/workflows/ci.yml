@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: konter_user
+          POSTGRES_PASSWORD: konter_password
+          POSTGRES_DB: konterkuota_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: Install dependencies from lockfile
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Knex migrations on test database
+        run: npm run db:migrate --workspace=@konter/backend
+        env:
+          NODE_ENV: test
+          TEST_DATABASE_URL: postgresql://konter_user:konter_password@localhost:5432/konterkuota_test
+          DATABASE_URL: postgresql://konter_user:konter_password@localhost:5432/konterkuota
+          SESSION_SECRET: test_secret_long_enough_minimum_32_characters_key
+
+      - name: Run Backend Tests
+        run: npm run test --workspace=@konter/backend
+        env:
+          NODE_ENV: test
+          TEST_DATABASE_URL: postgresql://konter_user:konter_password@localhost:5432/konterkuota_test
+          DATABASE_URL: postgresql://konter_user:konter_password@localhost:5432/konterkuota
+          SESSION_SECRET: test_secret_long_enough_minimum_32_characters_key
+
+      - name: Run Frontend Tests
+        run: npm run test --workspace=@konter/frontend
+
+      - name: Build Next.js Frontend
+        run: npm run build --workspace=@konter/frontend
+        env:
+          NODE_ENV: production
+          API_INTERNAL_URL: http://localhost:4000/api/v1
+          SITE_URL: http://localhost:3000
+
+      - name: Build production Docker images
+        run: |
+          docker build -f infra/backend.Dockerfile -t konterkuota-backend:ci .
+          docker build -f infra/frontend.Dockerfile --build-arg SITE_URL=https://ci.konterkuota.test --build-arg API_INTERNAL_URL=http://backend:4000/api/v1 -t konterkuota-frontend:ci .
+
+      - name: Verify frontend container runtime configuration
+        run: docker run --rm -e API_INTERNAL_URL=http://backend:4000/api/v1 konterkuota-frontend:ci node infra/check-frontend-runtime.mjs
+

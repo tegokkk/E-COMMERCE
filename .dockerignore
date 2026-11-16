@@ -1,0 +1,17 @@
+**/.env
+**/.env.*
+**/node_modules
+backend/uploads
+**/.next
+**/coverage
+**/test-results
+**/playwright-report
+**/tests
+docs
+design
+stitch_konterkuota_directory_platform
+.github
+.git
+*.log
+tmp
+temp

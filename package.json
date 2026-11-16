@@ -1,0 +1,36 @@
+{
+  "name": "konterkuota-root",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n \"frontend,backend\" -c \"cyan,green\" \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "npm run dev --workspace=@konter/frontend",
+    "dev:backend": "npm run dev --workspace=@konter/backend",
+    "build": "npm run build --workspace=@konter/frontend",
+    "lint": "eslint .",
+    "test": "npm run test --workspaces --if-present",
+    "test:e2e": "playwright test",
+    "db:migrate": "npm run db:migrate --workspace=@konter/backend",
+    "db:migrate:rollback": "npm run db:migrate:rollback --workspace=@konter/backend",
+    "db:seed": "npm run db:seed --workspace=@konter/backend",
+    "admin:create": "npm run admin:create --workspace=@konter/backend",
+    "admin:reset-password": "npm run admin:reset-password --workspace=@konter/backend",
+    "analytics:report": "npm run analytics:report --workspace=@konter/backend",
+    "analytics:cleanup": "npm run analytics:cleanup --workspace=@konter/backend"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^16.4.5",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.20.1",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.5.1"
+  }
+}
