@@ -52,6 +52,7 @@ export const HeroSection = React.forwardRef(function HeroSection(
     subtitle,
     callToAction,
     backgroundImage,
+    visual,
     contactInfo,
     children,
     ...props
@@ -155,12 +156,14 @@ export const HeroSection = React.forwardRef(function HeroSection(
 
       {/* Right Column: Visual Feature Panel with Diagonal Clip-Path Reveal */}
       <motion.div
-        className="relative min-h-[240px] w-full overflow-hidden bg-gradient-to-br from-chrome via-surface to-primary/30 sm:min-h-[300px] md:min-h-full md:w-1/2 lg:w-[44%]"
+        className="relative min-h-[260px] w-full overflow-hidden bg-gradient-to-br from-chrome via-surface to-primary/30 sm:min-h-[320px] md:min-h-full md:w-1/2 lg:w-[44%]"
         initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
         animate={{ clipPath: 'polygon(14% 0, 100% 0, 100% 100%, 0% 100%)' }}
         transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       >
-        {backgroundImage ? (
+        {visual ? (
+          <div className="absolute inset-0">{visual}</div>
+        ) : backgroundImage ? (
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -168,7 +171,7 @@ export const HeroSection = React.forwardRef(function HeroSection(
           />
         ) : null}
         <div
-          className="absolute inset-0 bg-gradient-to-tr from-canvas/60 via-transparent to-primary/20"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-canvas/45 via-transparent to-primary/15"
           aria-hidden="true"
         />
       </motion.div>

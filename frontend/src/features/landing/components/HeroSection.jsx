@@ -2,8 +2,25 @@
 
 import React from 'react';
 import { HeroSection as HeroSectionTemplate } from '@/components/ui/hero-section-2';
+import EmberPetalPreloader from '@/components/ui/ember-petal-preloader';
 import { Button } from '@/components/ui/Button';
 import { Icon } from '@/components/ui/Icon';
+
+const KONTER_FLOWER_PALETTE = {
+  sky: '#1E3A6E',
+  haze: '#17263D',
+  ground: '#0B1220',
+  lilac: '#60A5FA',
+  rose: '#3B82F6',
+  petal: '#FACC15',
+  petalLight: '#FEF08A',
+  petalDeep: '#CA8A04',
+  gold: '#93C5FD',
+  stem: '#3B82F6',
+  leaf: '#2563EB',
+  leafDeep: '#101B2E',
+  ink: '#F1F5F9',
+};
 
 function renderHighlightedTitle(text) {
   if (!text || typeof text !== 'string') return text;
@@ -49,7 +66,20 @@ export function HeroSection({
         text: 'LIHAT DAFTAR KONTER →',
         href: '#direktori',
       }}
-      backgroundImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80"
+      visual={
+        <EmberPetalPreloader
+          loop
+          word=""
+          caption=""
+          counter={false}
+          showHint={false}
+          palette={KONTER_FLOWER_PALETTE}
+          density={1.15}
+          durationMs={3600}
+          height="100%"
+          className="h-full w-full"
+        />
+      }
       contactInfo={{
         website: publicContactEmail || 'konterkuota.id',
         phone: managerWhatsapp || 'Hubungi via WhatsApp',
